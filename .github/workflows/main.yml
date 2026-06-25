@@ -1,0 +1,19 @@
+name: Create RTX Virtual Machine
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Descargar herramientas de inicialización
+      run: |
+        echo "Iniciando configuración de la máquina virtual..."
+        
+    - name: Configurar Entorno de Streaming
+      run: |
+        # Aquí se insertan los comandos para descargar Sunshine (servidor para Moonlight)
+        # y los drivers NVIDIA correspondientes si la instancia los requiere.
+        echo "Instalando Sunshine y controladores de pantalla virtuales..."
