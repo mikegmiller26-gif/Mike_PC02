@@ -17,3 +17,12 @@ jobs:
         # Aquí se insertan los comandos para descargar Sunshine (servidor para Moonlight)
         # y los drivers NVIDIA correspondientes si la instancia los requiere.
         echo "Instalando Sunshine y controladores de pantalla virtuales..."
+- name: Obtener IP Pública
+  run: |
+    $ip = Invoke-RestMethod -Uri "https://ipify.org"
+    Write-Output "La IP pública de la máquina es: $ip"
+
+- name: Obtener IP Local
+  run: |
+    Get-NetIPAddress -AddressFamily IPv4 | Select-Object IPAddress
+    
